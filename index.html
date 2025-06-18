@@ -1,0 +1,1584 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Image Compressor & Resizer Online | PixMorphy</title>
+  <meta name="description" content="Compress and resize images instantly for Instagram, YouTube, Facebook & more. Fast, free, and high-quality photo editing online with PixMorphy." />
+  <meta name="keywords" content="resize image to 20KB, resize image to 100kb, resize image to 50kb, reduce image size in KB, image resizer for Windows, image resizer free, resize image to 200kb, image resize in KB, image resizer online, compress image without losing quality, reduce image size online, image compressor online free, online photo resizer, best image compressor, resize image for Instagram, convert image to specific dimensions, online tool to resize image, compress JPEG image online, image size reducer online, resize image for LinkedIn profile, compress image for website, reduce PNG file size online, photo compressor tool, online image editor, resize image for social media, compress photos online, reduce file size, image optimization tool, free image resizer, photo editor online, batch image resizer, smart image compression, lossless image compression, image format converter, web image optimizer, social media image sizes, profile picture resizer, banner image creator, thumbnail generator, image quality enhancer, photo filter tool, brightness contrast editor, saturation adjustment tool, professional photo editing, online image studio, quick image editor, mobile image editor, desktop image tool, cross-platform image editor" />
+  <meta name="author" content="Rajat Gupta" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pixmorphy.netlify.app/" />
+  <meta property="og:title" content="Free Image Compressor & Resizer Online | PixMorphy" />
+  <meta property="og:description" content="Compress and resize images instantly for Instagram, YouTube, Facebook & more. Fast, free, and high-quality photo editing online with PixMorphy." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="600" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://pixmorphy.netlify.app/" />
+  <meta property="twitter:title" content="Free Image Compressor & Resizer Online | PixMorphy" />
+  <meta property="twitter:description" content="Compress and resize images instantly for Instagram, YouTube, Facebook & more. Fast, free, and high-quality photo editing online with PixMorphy." />
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" />
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" />
+  
+  <!-- Structured Data with Enhanced SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PixMorphy - Free Image Compressor & Resizer",
+    "alternateName": "Image Resizer Online",
+    "description": "Compress and resize images instantly for Instagram, YouTube, Facebook & more. Fast, free, and high-quality photo editing online with PixMorphy.",
+    "url": "https://pixmorphy.netlify.app/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Rajat Gupta"
+    },
+    "image": "https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG",
+    "featureList": [
+      "Resize images to 20KB, 50KB, 100KB, 200KB",
+      "Free image resizer for Windows and all devices",
+      "Compress images for web optimization", 
+      "Enhance photos with professional filters",
+      "Image size reducer in KB",
+      "No software installation required",
+      "Works on all devices",
+      "100% browser-based processing"
+    ],
+    "mainEntity": [
+      {
+        "@type": "Thing",
+        "name": "Image Resizer",
+        "description": "Resize images to specific KB sizes including 20KB, 50KB, 100KB, 200KB"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Image Compressor",
+        "description": "Reduce image file size without losing quality"
+      },
+      {
+        "@type": "Thing",
+        "name": "Image Enhancer", 
+        "description": "Apply professional filters and effects to enhance photos"
+      }
+    ]
+  }
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --accent: #10b981;
+      --background: #f8fafc;
+      --surface: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 0.5rem;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header */
+    .header {
+      background: var(--surface);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4rem;
+      padding: 0 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.125rem;
+      overflow: hidden;
+      position: relative;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    }
+
+    .logo-icon img {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+      border-radius: calc(var(--radius) - 2px);
+      background: white;
+      padding: 2px;
+    }
+
+    .logo-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      font-size: 1.125rem;
+      border-radius: var(--radius);
+    }
+
+    .logo-text h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .logo-text p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--background);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-accent:hover {
+      background: #059669;
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Main Content */
+    .main {
+      padding: 2rem 0;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 42rem;
+      margin: 0 auto 2rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      margin: 0 auto 1rem;
+      background: var(--primary);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Editor Interface */
+    .editor-container {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+    }
+
+    .tab-trigger {
+      background: none;
+      border: none;
+      padding: 1rem 0.25rem;
+      margin-right: 2rem;
+      border-bottom: 2px solid transparent;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tab-trigger:hover {
+      color: var(--text);
+    }
+
+    .tab-trigger.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .tab-content {
+      padding: 1.5rem;
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .input, .select {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      background: var(--surface);
+      transition: border-color 0.2s;
+    }
+
+    .input:focus, .select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .size-presets {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .size-preset {
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      text-align: center;
+      font-size: 0.8rem;
+      transition: all 0.2s;
+    }
+
+    .size-preset:hover {
+      border-color: var(--primary);
+      background: rgba(59, 130, 246, 0.05);
+    }
+
+    .size-preset.active {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Upload Zone */
+    .upload-zone {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--surface);
+      margin-bottom: 1rem;
+    }
+
+    .upload-zone:hover,
+    .upload-zone.dragover {
+      border-color: var(--primary);
+      background: rgba(59, 130, 246, 0.05);
+    }
+
+    .upload-zone i {
+      font-size: 3rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .upload-text {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .upload-subtext {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Progress Bar */
+    .progress {
+      width: 100%;
+      height: 0.5rem;
+      background: var(--background);
+      border-radius: 0.25rem;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    /* Image Preview */
+    .image-preview {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      background: var(--surface);
+      text-align: center;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-preview img {
+      max-width: 100%;
+      max-height: 400px;
+      height: auto;
+      border-radius: var(--radius);
+    }
+
+    .empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+    }
+
+    .empty-state i {
+      font-size: 4rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .empty-state p {
+      color: var(--text-muted);
+    }
+
+    /* Feedback Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal h3 {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .modal h4 {
+      margin: 1.5rem 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .modal ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal li {
+      margin-bottom: 0.25rem;
+    }
+
+    .feedback-form textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.875rem;
+      resize: vertical;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      margin-top: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .footer p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Slider */
+    .slider {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: var(--background);
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Error Styles */
+    .error {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: var(--radius);
+      padding: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .error-content {
+      display: flex;
+      align-items: center;
+      color: #dc2626;
+      font-size: 0.875rem;
+    }
+
+    .error-content i {
+      margin-right: 0.5rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+      .header-content {
+        padding: 0 0.5rem;
+      }
+      
+      .logo-text h1 {
+        font-size: 1rem;
+      }
+      
+      .logo-text p {
+        display: none;
+      }
+      
+      .header-actions {
+        gap: 0.5rem;
+      }
+      
+      .btn {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.8rem;
+      }
+      
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .modal-content {
+        padding: 1rem;
+      }
+      
+      .tabs {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      
+      .tab-trigger {
+        margin-right: 1rem;
+      }
+    }
+
+    /* SEO Content Styling */
+    .seo-content {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .seo-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .seo-content p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo" onclick="navigateToHome()">
+          <div class="logo-icon">
+            <img src="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" 
+                 alt="PixMorphy Logo" 
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';">
+            <div class="logo-fallback">
+              <i class="fas fa-camera-retro"></i>
+            </div>
+          </div>
+          <div class="logo-text">
+            <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--text); margin: 0;">PixMorphy</h2>
+            <p>Free Image Editor</p>
+          </div>
+        </a>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="showFeedback()">
+            <i class="fas fa-comment"></i> Feedback
+          </button>
+          <button class="btn btn-primary" onclick="showAbout()">
+            <i class="fas fa-info-circle"></i> About
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <!-- Home Page -->
+      <div id="home-page">
+        <div class="hero">
+          <h1>Compress & Resize Photos Online — Perfectly Optimized for Every Platform</h1>
+          <div class="seo-content">
+            <p>PixMorphy is a free online image editing tool that helps you compress photos without losing quality and resize images for Instagram, YouTube, Facebook, and more. Whether you're a creator, student, or marketer, PixMorphy makes image optimization fast, easy, and platform-ready.</p>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card" onclick="navigateToTool('resize')">
+            <div class="feature-icon">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </div>
+            <h3>Free Image Resizer</h3>
+            <p>Resize images to specific KB sizes (20KB, 50KB, 100KB, 200KB). Perfect for social media, websites, and reducing file size in KB. Works on all devices including Windows.</p>
+          </div>
+
+          <div class="feature-card" onclick="navigateToTool('compress')">
+            <div class="feature-icon">
+              <i class="fas fa-compress-alt"></i>
+            </div>
+            <h3>Compress Images Without Losing Quality</h3>
+            <p>Reduce image file size without losing quality. Free image compressor for web optimization and faster loading times. Perfect for Instagram, YouTube, and Facebook.</p>
+          </div>
+
+          <div class="feature-card" onclick="navigateToTool('enhance')">
+            <div class="feature-icon">
+              <i class="fas fa-magic"></i>
+            </div>
+            <h3>Photo Resizer for Instagram</h3>
+            <p>Apply professional filters and effects to improve your photos. Brightness, contrast, saturation adjustments optimized for social media platforms.</p>
+          </div>
+        </div>
+
+        <!-- Internal Links Section -->
+        <div class="seo-content">
+          <h2>Professional Online Image Editor India</h2>
+          <p>Get started with our powerful image editing tools. <a href="#resize" onclick="navigateToTool('resize')" style="color: var(--primary); text-decoration: none;">Resize images online</a> for free, <a href="#compress" onclick="navigateToTool('compress')" style="color: var(--primary); text-decoration: none;">compress photos</a> without quality loss, or <a href="#enhance" onclick="navigateToTool('enhance')" style="color: var(--primary); text-decoration: none;">enhance your images</a> with professional filters. All tools work directly in your browser with no software installation required.</p>
+        </div>
+      </div>
+
+      <!-- Editor Interface -->
+      <div id="editor-page" class="hidden">
+        <div class="editor-container">
+          <div class="tabs">
+            <button class="tab-trigger active" data-tab="resize">
+              <i class="fas fa-expand-arrows-alt"></i> Resize
+            </button>
+            <button class="tab-trigger" data-tab="compress">
+              <i class="fas fa-compress-alt"></i> Compress
+            </button>
+            <button class="tab-trigger" data-tab="enhance">
+              <i class="fas fa-magic"></i> Enhance
+            </button>
+          </div>
+
+          <!-- Resize Tab -->
+          <div id="resize-content" class="tab-content active">
+            <div class="grid grid-2">
+              <div>
+                <h3>Upload & Resize Image</h3>
+                <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <div class="upload-text">Click to upload or drag & drop</div>
+                  <div class="upload-subtext">Supports JPG, PNG, WebP (Max 10MB)</div>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="handleFile(this.files[0])">
+                
+                <div class="form-group">
+                  <label class="label">Quick Size Presets (KB)</label>
+                  <div class="size-presets">
+                    <div class="size-preset" onclick="setTargetSize(20)">20KB</div>
+                    <div class="size-preset" onclick="setTargetSize(50)">50KB</div>
+                    <div class="size-preset" onclick="setTargetSize(100)">100KB</div>
+                    <div class="size-preset" onclick="setTargetSize(200)">200KB</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="label">Resize Options</label>
+                  <select class="select" id="resizePreset" onchange="updateDimensions()">
+                    <option value="custom">Custom Size</option>
+                    <option value="targetSize">Target File Size (KB)</option>
+                    <option value="instagram">Instagram Post (1080x1080)</option>
+                    <option value="facebook">Facebook Cover (820x312)</option>
+                    <option value="youtube">YouTube Thumbnail (1280x720)</option>
+                    <option value="linkedin">LinkedIn Banner (1584x396)</option>
+                    <option value="twitter">Twitter Header (1500x500)</option>
+                  </select>
+                </div>
+
+                <div class="grid grid-2">
+                  <div class="form-group">
+                    <label class="label">Width (px)</label>
+                    <input type="number" class="input" id="width" placeholder="Width">
+                  </div>
+                  <div class="form-group">
+                    <label class="label">Height (px)</label>
+                    <input type="number" class="input" id="height" placeholder="Height">
+                  </div>
+                </div>
+
+                <div class="form-group" id="targetSizeGroup" style="display: none;">
+                  <label class="label">Target Size (KB)</label>
+                  <input type="number" class="input" id="targetSize" placeholder="Enter target size in KB">
+                </div>
+
+                <button class="btn btn-primary" onclick="processImage('resize')" id="resizeBtn" disabled>
+                  <i class="fas fa-expand-arrows-alt"></i> Resize Image
+                </button>
+              </div>
+
+              <div>
+                <h3>Preview</h3>
+                <div class="image-preview">
+                  <div class="empty-state" id="previewEmpty">
+                    <i class="fas fa-image"></i>
+                    <p>Upload an image to see preview</p>
+                  </div>
+                  <img id="previewImage" class="hidden" alt="Preview">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Compress Tab -->
+          <div id="compress-content" class="tab-content">
+            <div class="grid grid-2">
+              <div>
+                <h3>Upload & Compress Image</h3>
+                <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <div class="upload-text">Click to upload or drag & drop</div>
+                  <div class="upload-subtext">Supports JPG, PNG, WebP (Max 10MB)</div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="label">Quality: <span id="qualityValue">80</span>%</label>
+                  <input type="range" class="slider" id="quality" min="10" max="100" value="80" oninput="updateQuality(this.value)">
+                </div>
+
+                <button class="btn btn-primary" onclick="processImage('compress')" id="compressBtn" disabled>
+                  <i class="fas fa-compress-alt"></i> Compress Image
+                </button>
+              </div>
+
+              <div>
+                <h3>Preview</h3>
+                <div class="image-preview">
+                  <div class="empty-state" id="previewEmpty">
+                    <i class="fas fa-image"></i>
+                    <p>Upload an image to see preview</p>
+                  </div>
+                  <img id="previewImage" class="hidden" alt="Preview">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enhance Tab -->
+          <div id="enhance-content" class="tab-content">
+            <div class="grid grid-2">
+              <div>
+                <h3>Upload & Enhance Image</h3>
+                <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <div class="upload-text">Click to upload or drag & drop</div>
+                  <div class="upload-subtext">Supports JPG, PNG, WebP (Max 10MB)</div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="label">Filter</label>
+                  <select class="select" id="filter">
+                    <option value="none">No Filter</option>
+                    <option value="brightness">Brightness</option>
+                    <option value="contrast">Contrast</option>
+                    <option value="saturate">Saturation</option>
+                    <option value="sepia">Sepia</option>
+                    <option value="grayscale">Grayscale</option>
+                    <option value="blur">Blur</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="label">Intensity: <span id="intensityValue">100</span>%</label>
+                  <input type="range" class="slider" id="intensity" min="0" max="200" value="100" oninput="updateIntensity(this.value)">
+                </div>
+
+                <button class="btn btn-primary" onclick="processImage('enhance')" id="enhanceBtn" disabled>
+                  <i class="fas fa-magic"></i> Enhance Image
+                </button>
+              </div>
+
+              <div>
+                <h3>Preview</h3>
+                <div class="image-preview">
+                  <div class="empty-state" id="previewEmpty">
+                    <i class="fas fa-image"></i>
+                    <p>Upload an image to see preview</p>
+                  </div>
+                  <img id="previewImage" class="hidden" alt="Preview">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress hidden" id="progress">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div id="result" class="hidden">
+          <h3>Result</h3>
+          <div class="image-preview">
+            <img id="resultImage" alt="Result">
+          </div>
+          <button class="btn btn-accent" onclick="downloadImage()" id="downloadBtn">
+            <i class="fas fa-download"></i> Download Image
+          </button>
+        </div>
+
+        <button class="btn btn-secondary" onclick="navigateToHome()" style="margin-top: 2rem;">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Feedback Modal -->
+  <div id="feedbackModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Share Your Feedback</h3>
+      <form class="feedback-form" onsubmit="submitFeedback(event)">
+        <div class="form-group">
+          <label class="label">Rating</label>
+          <select class="select" id="rating" required>
+            <option value="">Select Rating</option>
+            <option value="5">5 Stars - Excellent</option>
+            <option value="4">4 Stars - Very Good</option>
+            <option value="3">3 Stars - Good</option>
+            <option value="2">2 Stars - Fair</option>
+            <option value="1">1 Star - Poor</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="label">Comments</label>
+          <textarea id="comments" placeholder="Tell us about your experience..." required></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" onclick="hideFeedback()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- About Modal -->
+  <div id="aboutModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>About PixMorphy</h3>
+      <p>PixMorphy is a free online image editing tool that helps you compress photos without losing quality and resize images for Instagram, YouTube, Facebook, and more.</p>
+      
+      <h4>Features:</h4>
+      <ul>
+        <li>Resize images to specific KB sizes (20KB, 50KB, 100KB, 200KB)</li>
+        <li>Free image resizer for Windows and all devices</li>
+        <li>Compress images without losing quality</li>
+        <li>Enhance photos with filters and adjustments</li>
+        <li>100% browser-based processing</li>
+        <li>No file uploads to servers - your privacy is protected</li>
+      </ul>
+      
+      <h4>Created by:</h4>
+      <p>Rajat Gupta</p>
+      
+      <div class="modal-actions">
+        <button class="btn btn-primary" onclick="hideAbout()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#resize" onclick="navigateToTool('resize')">Free Image Resizer</a>
+        <a href="#compress" onclick="navigateToTool('compress')">Image Compressor</a>
+        <a href="#enhance" onclick="navigateToTool('enhance')">Photo Resizer for Instagram</a>
+        <a href="#" onclick="showFeedback()">Feedback</a>
+        <a href="mailto:support@pixmorphy.com">Contact</a>
+      </div>
+      <p>&copy; 2024 PixMorphy. Created by Rajat Gupta. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Global variables
+    let currentImage = null;
+    let processedImage = null;
+    let logs = {
+      visitors: [],
+      feedback: [],
+      daily: [],
+      activities: []
+    };
+    
+    // Enhanced URL routing for SEO
+    function navigateToHome() {
+      showHome();
+      updateURL('/');
+      updatePageTitle('Free Image Compressor & Resizer Online | PixMorphy');
+    }
+
+    function navigateToTool(tool) {
+      showEditor(tool);
+      updateURL('/' + tool);
+      
+      const titles = {
+        'resize': 'Free Image Resizer - Resize to 20KB, 50KB, 100KB, 200KB | PixMorphy',
+        'compress': 'Image Compressor - Compress Images Without Losing Quality | PixMorphy', 
+        'enhance': 'Photo Resizer for Instagram - Professional Filters | PixMorphy'
+      };
+      
+      updatePageTitle(titles[tool] || 'Free Image Compressor & Resizer Online | PixMorphy');
+    }
+
+    function updateURL(path) {
+      if (history.pushState) {
+        history.pushState({}, '', path);
+      }
+    }
+
+    function updatePageTitle(title) {
+      document.title = title;
+    }
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', function(event) {
+      const path = window.location.pathname;
+      if (path === '/' || path === '') {
+        navigateToHome();
+      } else {
+        const tool = path.substring(1);
+        if (['resize', 'compress', 'enhance'].includes(tool)) {
+          navigateToTool(tool);
+        }
+      }
+    });
+
+    // Initialize routing on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const path = window.location.pathname;
+      if (path !== '/' && path !== '') {
+        const tool = path.substring(1);
+        if (['resize', 'compress', 'enhance'].includes(tool)) {
+          navigateToTool(tool);
+          return;
+        }
+      }
+      navigateToHome();
+      
+      // Initialize other functionality
+      setupDragAndDrop();
+      loadLogs();
+      initLogging();
+    });
+
+    // Navigation functions with URL updates
+    function showHome() {
+      document.getElementById('home-page').classList.remove('hidden');
+      document.getElementById('editor-page').classList.add('hidden');
+      document.getElementById('result').classList.add('hidden');
+    }
+
+    function showEditor(tool) {
+      document.getElementById('home-page').classList.add('hidden');
+      document.getElementById('editor-page').classList.remove('hidden');
+      switchTab(tool);
+    }
+
+    function switchTab(tabName) {
+      // Remove active class from all triggers and contents
+      document.querySelectorAll('.tab-trigger').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      
+      // Add active class to selected tab
+      document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+      document.getElementById(`${tabName}-content`).classList.add('active');
+      
+      logActivity(`Switched to ${tabName} tab`);
+    }
+
+    // Tab functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize tab triggers
+      document.querySelectorAll('.tab-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const tabName = trigger.getAttribute('data-tab');
+          navigateToTool(tabName);
+        });
+      });
+    });
+
+    function setupDragAndDrop() {
+      const uploadZones = document.querySelectorAll('.upload-zone');
+      
+      uploadZones.forEach(zone => {
+        zone.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          zone.classList.add('dragover');
+        });
+        
+        zone.addEventListener('dragleave', () => {
+          zone.classList.remove('dragover');
+        });
+        
+        zone.addEventListener('drop', (e) => {
+          e.preventDefault();
+          zone.classList.remove('dragover');
+          
+          const files = e.dataTransfer.files;
+          if (files.length > 0) {
+            handleFile(files[0]);
+          }
+        });
+      });
+    }
+
+    // File handling
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) {
+        alert('Please select a valid image file.');
+        return;
+      }
+
+      if (file.size > 10 * 1024 * 1024) {
+        alert('File size must be less than 10MB.');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        currentImage = new Image();
+        currentImage.onload = function() {
+          displayPreview();
+          enableButtons();
+          updateImageInfo();
+          logActivity(`Image uploaded: ${file.name} (${formatFileSize(file.size)})`);
+        };
+        currentImage.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function displayPreview() {
+      const previewImg = document.getElementById('previewImage');
+      const previewEmpty = document.getElementById('previewEmpty');
+      
+      if (currentImage) {
+        previewImg.src = currentImage.src;
+        previewImg.classList.remove('hidden');
+        previewEmpty.classList.add('hidden');
+      }
+    }
+
+    function enableButtons() {
+      document.getElementById('resizeBtn').disabled = false;
+      document.getElementById('compressBtn').disabled = false; 
+      document.getElementById('enhanceBtn').disabled = false;
+    }
+
+    function updateImageInfo() {
+      if (currentImage) {
+        document.getElementById('width').value = currentImage.width;
+        document.getElementById('height').value = currentImage.height;
+      }
+    }
+
+    // Enhanced size preset functionality
+    function setTargetSize(sizeKB) {
+      // Remove active class from all presets
+      document.querySelectorAll('.size-preset').forEach(p => p.classList.remove('active'));
+      // Add active class to clicked preset
+      event.target.classList.add('active');
+      
+      // Set target size and show relevant options
+      document.getElementById('resizePreset').value = 'targetSize';
+      document.getElementById('targetSize').value = sizeKB;
+      document.getElementById('targetSizeGroup').style.display = 'block';
+      
+      logActivity(`Selected target size: ${sizeKB}KB`);
+    }
+
+    // Updated dimensions function
+    function updateDimensions() {
+      const preset = document.getElementById('resizePreset').value;
+      const targetSizeGroup = document.getElementById('targetSizeGroup');
+      
+      if (preset === 'targetSize') {
+        targetSizeGroup.style.display = 'block';
+      } else {
+        targetSizeGroup.style.display = 'none';
+      }
+      
+      const presets = {
+        instagram: { width: 1080, height: 1080 },
+        facebook: { width: 820, height: 312 },
+        youtube: { width: 1280, height: 720 },
+        linkedin: { width: 1584, height: 396 },
+        twitter: { width: 1500, height: 500 }
+      };
+
+      if (presets[preset]) {
+        document.getElementById('width').value = presets[preset].width;
+        document.getElementById('height').value = presets[preset].height;
+      }
+    }
+
+    // Quality and intensity updates
+    function updateQuality(value) {
+      document.getElementById('qualityValue').textContent = value;
+    }
+
+    function updateIntensity(value) {
+      document.getElementById('intensityValue').textContent = value;
+    }
+
+    // Enhanced image processing with target file size
+    function processImage(type) {
+      if (!currentImage) return;
+
+      showProgress();
+      
+      setTimeout(() => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+
+        if (type === 'resize') {
+          const preset = document.getElementById('resizePreset').value;
+          
+          if (preset === 'targetSize') {
+            const targetKB = parseInt(document.getElementById('targetSize').value);
+            if (targetKB) {
+              processedImage = resizeToTargetSize(currentImage, targetKB);
+              logActivity(`Image resized to target size: ${targetKB}KB`);
+            } else {
+              alert('Please enter a target size in KB');
+              hideProgress();
+              return;
+            }
+          } else {
+            const width = parseInt(document.getElementById('width').value) || currentImage.width;
+            const height = parseInt(document.getElementById('height').value) || currentImage.height;
+            
+            canvas.width = width;
+            canvas.height = height;
+            ctx.drawImage(currentImage, 0, 0, width, height);
+            processedImage = canvas.toDataURL();
+            
+            logActivity(`Image resized to ${width}x${height}`);
+          }
+          
+        } else if (type === 'compress') {
+          canvas.width = currentImage.width;
+          canvas.height = currentImage.height;
+          ctx.drawImage(currentImage, 0, 0);
+          
+          const quality = document.getElementById('quality').value / 100;
+          processedImage = canvas.toDataURL('image/jpeg', quality);
+          
+          logActivity(`Image compressed at ${quality * 100}% quality`);
+          
+        } else if (type === 'enhance') {
+          canvas.width = currentImage.width;
+          canvas.height = currentImage.height;
+          
+          const filter = document.getElementById('filter').value;
+          const intensity = document.getElementById('intensity').value;
+          
+          if (filter !== 'none') {
+            ctx.filter = `${filter}(${intensity}%)`;
+          }
+          
+          ctx.drawImage(currentImage, 0, 0);
+          processedImage = canvas.toDataURL();
+          
+          logActivity(`Image enhanced with ${filter} filter`);
+        }
+
+        hideProgress();
+        showResult();
+        
+        // Update daily stats
+        const today = new Date().toDateString();
+        let dailyLog = logs.daily.find(d => d.date === today);
+        if (dailyLog) {
+          if (type === 'resize') dailyLog.resizes++;
+          else if (type === 'compress') dailyLog.compressions++;
+          else if (type === 'enhance') dailyLog.enhancements++;
+        }
+        saveLogsLocally();
+        
+      }, 1000);
+    }
+
+    // Function to resize image to target file size
+    function resizeToTargetSize(image, targetKB) {
+      const targetBytes = targetKB * 1024;
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      
+      // Start with original dimensions
+      let width = image.width;
+      let height = image.height;
+      let quality = 0.9;
+      let result = null;
+      
+      // Binary search approach to find optimal dimensions and quality
+      for (let i = 0; i < 10; i++) {
+        canvas.width = width;
+        canvas.height = height;
+        ctx.drawImage(image, 0, 0, width, height);
+        
+        result = canvas.toDataURL('image/jpeg', quality);
+        const currentSize = atob(result.split(',')[1]).length;
+        
+        if (currentSize <= targetBytes) {
+          break;
+        }
+        
+        // Reduce dimensions by 10%
+        width *= 0.9;
+        height *= 0.9;
+        quality *= 0.95;
+      }
+      
+      return result;
+    }
+
+    function showProgress() {
+      document.getElementById('progress').classList.remove('hidden');
+      const progressBar = document.getElementById('progressBar');
+      let width = 0;
+      const interval = setInterval(() => {
+        width += 10;
+        progressBar.style.width = width + '%';
+        if (width >= 100) {
+          clearInterval(interval);
+        }
+      }, 100);
+    }
+
+    function hideProgress() {
+      document.getElementById('progress').classList.add('hidden');
+      document.getElementById('progressBar').style.width = '0%';
+    }
+
+    function showResult() {
+      const result = document.getElementById('result');
+      const resultImage = document.getElementById('resultImage');
+      
+      resultImage.src = processedImage;
+      result.classList.remove('hidden');
+    }
+
+    function downloadImage() {
+      if (!processedImage) return;
+
+      const link = document.createElement('a');
+      link.download = `pixmorphy-${Date.now()}.png`;
+      link.href = processedImage;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      logActivity('Image downloaded');
+    }
+
+    // Modal functions
+    function showFeedback() {
+      document.getElementById('feedbackModal').classList.remove('hidden');
+    }
+
+    function hideFeedback() {
+      document.getElementById('feedbackModal').classList.add('hidden');
+      document.getElementById('rating').value = '';
+      document.getElementById('comments').value = '';
+    }
+
+    function showAbout() {
+      document.getElementById('aboutModal').classList.remove('hidden');
+    }
+
+    function hideAbout() {
+      document.getElementById('aboutModal').classList.add('hidden');
+    }
+
+    function submitFeedback(event) {
+      event.preventDefault();
+      
+      const rating = document.getElementById('rating').value;
+      const comments = document.getElementById('comments').value;
+      
+      const feedback = {
+        timestamp: new Date().toISOString(),
+        rating: rating,
+        comments: comments,
+        userAgent: navigator.userAgent
+      };
+      
+      logs.feedback.push(feedback);
+      saveLogsLocally();
+      
+      logActivity(`Feedback submitted: ${rating} stars`);
+      
+      alert('Thank you for your feedback!');
+      hideFeedback();
+    }
+
+    // Close modals when clicking outside
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal')) {
+        if (e.target.id === 'feedbackModal') {
+          hideFeedback();
+        } else if (e.target.id === 'aboutModal') {
+          hideAbout();
+        }
+      }
+    });
+
+    // Logging functions
+    function initLogging() {
+      const visitor = {
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        referrer: document.referrer,
+        sessionId: generateSessionId()
+      };
+      logs.visitors.push(visitor);
+      
+      const today = new Date().toDateString();
+      let dailyLog = logs.daily.find(d => d.date === today);
+      if (!dailyLog) {
+        dailyLog = { date: today, visits: 0, resizes: 0, compressions: 0, enhancements: 0 };
+        logs.daily.push(dailyLog);
+      }
+      dailyLog.visits++;
+      
+      saveLogsLocally();
+    }
+
+    function generateSessionId() {
+      return Math.random().toString(36).substr(2, 9);
+    }
+
+    function loadLogs() {
+      const savedLogs = localStorage.getItem('pixmorphy_logs');
+      if (savedLogs) {
+        logs = JSON.parse(savedLogs);
+      }
+    }
+
+    function saveLogsLocally() {
+      try {
+        localStorage.setItem('pixmorphy_logs', JSON.stringify(logs));
+      } catch (error) {
+        console.warn('Failed to save logs locally:', error);
+      }
+    }
+
+    function logActivity(activity) {
+      const logEntry = {
+        timestamp: new Date().toISOString(),
+        activity: activity,
+        userAgent: navigator.userAgent.substring(0, 100),
+        url: window.location.href
+      };
+      
+      if (!logs.activities) {
+        logs.activities = [];
+      }
+      
+      logs.activities.push(logEntry);
+      saveLogsLocally();
+    }
+
+    // Format file size
+    function formatFileSize(bytes) {
+      if (bytes === 0) return '0 Bytes';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+  </script>
+</body>
+</html>
